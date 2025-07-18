@@ -33,8 +33,8 @@ A sophisticated Telegram bot platform with a web-based admin panel, featuring a 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/telegram-bot-admin.git
-cd telegram-bot-admin
+git clone https://github.com/yourusername/TELEBOT-18.git
+cd TELEBOT-18
 ```
 
 2. Install dependencies:
