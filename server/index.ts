@@ -7,6 +7,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// ✅ Telegram webhook endpoint — place AFTER `app` is created
+app.post('/telegram', (req, res) => {
+  bot?.processUpdate(req.body);
+  res.sendStatus(200);
+});
+
 // Add CORS headers for Replit preview
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -64,7 +70,6 @@ app.use((req, res, next) => {
     const bot = getBot();
     if (bot) {
       try {
-        await bot.stopPolling();
         bot.removeAllListeners();
       } catch (error) {
         console.error('Error during cleanup:', error);
