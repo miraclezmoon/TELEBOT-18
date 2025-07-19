@@ -40,7 +40,7 @@ async function initializeBot() {
     bot = new TelegramBot(BOT_TOKEN, { polling: false }); // Disable polling, no webhook server
 
 // Set webhook to your Railway public URL
-await bot.setWebHook(`https://telebot71717-production-acca.up.railway.app/telegram`);
+await bot.setWebHook(`https://TELEBOT-18-production-acca.up.railway.app/telegram`);
 
     setupBotHandlers();
     console.log('Telegram bot initialized successfully!');
