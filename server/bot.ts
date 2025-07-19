@@ -37,11 +37,7 @@ async function initializeBot() {
     const clearUpdatesUrl = `https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?offset=-1`;
     await fetch(clearUpdatesUrl);
     
-    bot = new TelegramBot(BOT_TOKEN, {
-  webHook: {
-    port: 5000,
-  }
-});
+    bot = new TelegramBot(BOT_TOKEN, { polling: false }); // Disable polling, no webhook server
 
 // Set webhook to your Railway public URL
 await bot.setWebHook(`https://telebot71717-production-acca.up.railway.app/telegram`);
